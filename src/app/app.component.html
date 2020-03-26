@@ -9,10 +9,10 @@
   </div>
 
   <div class="editor">
-    <app-editor></app-editor>
+    <app-editor (newFormat)="this.format = $event"></app-editor>
   </div>
 
   <div class="response">
-    <app-response></app-response>
+    <app-response [format]="this.format"></app-response>
   </div>
 </main>

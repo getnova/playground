@@ -1,8 +1,12 @@
 <div class="box">
   <div class="editor">
     <div class="content">
-      <app-form-group name="Response">
-        <app-json-view *ngIf="data" [json]="data"></app-json-view>
+      <app-form-group name="Response" *ngIf="format === 'json'">
+        <app-json-view *ngIf="format === 'json' && data" [json]="data"></app-json-view>
+      </app-form-group>
+      <app-form-group name="Response" *ngIf="format === 'raw'">
+        <label for="response-field"></label>
+        <textarea disabled id="response-field" class="area">{{data}}</textarea>
       </app-form-group>
     </div>
   </div>

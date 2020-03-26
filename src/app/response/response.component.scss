@@ -9,4 +9,13 @@ div.editor {
   div.content {
     flex-grow: 1;
   }
+
+  textarea.area {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    resize: none !important;
+    background-color: transparent;
+    border: none;
+  }
 }

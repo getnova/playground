@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {WebSocketService} from '../_core/web-socket.service';
 
@@ -9,11 +9,19 @@ import {WebSocketService} from '../_core/web-socket.service';
 })
 export class ResponseComponent {
 
+  @Input() format: string;
+
   history: FormControl;
   data: any;
 
   constructor(private websocketService: WebSocketService) {
     this.history = new FormControl({value: '', disabled: true});
-    this.websocketService.response.subscribe(data => this.data = JSON.parse(data));
+    this.websocketService.response.subscribe(data => {
+      if (this.format === 'json') {
+        this.data = JSON.parse(data);
+      } else {
+        this.data = data;
+      }
+    });
   }
 }

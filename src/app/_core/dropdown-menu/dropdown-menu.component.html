@@ -1,0 +1,13 @@
+<div class="dropdown-menu">
+  <div class="header">
+    <app-button color="green" [title]="title" class="name" (performClick)="click()">
+      <app-icon-arrow-down></app-icon-arrow-down>
+    </app-button>
+  </div>
+  <div [hidden]="!opened" class="items">
+    <app-button class="item" *ngFor="let name of items" (performClick)="clickItem(name)" [title]="name">
+      <app-icon-json *ngIf="name === 'json'"></app-icon-json>
+      <app-icon-raw *ngIf="name === 'raw'"></app-icon-raw>
+    </app-button>
+  </div>
+</div>

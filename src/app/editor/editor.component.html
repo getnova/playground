@@ -14,6 +14,8 @@
                   title="Send">
         <app-icon-send></app-icon-send>
       </app-button>
+      <app-dropdown-menu (currentItem)="changeFormat($event)" [name]="'Format'" [items]="['json', 'raw']">
+      </app-dropdown-menu>
     </div>
   </div>
 </div>
