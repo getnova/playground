@@ -27,7 +27,7 @@ export class EditorComponent {
         try {
           this.content.setValue(JSON.stringify(JSON.parse(this.content.value), null, 2));
         } catch (e) {
-          if ('SyntaxError' in e) {
+          if (e.toString().includes('SyntaxError')) {
             this.notificationService.sendNotification(
               `Error in the Json syntax of the response try the 'raw' format.`, 'error');
           } else {
