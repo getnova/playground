@@ -36,7 +36,7 @@ export class ResponseComponent {
       this.data = this.format === 'Json' ? JSON.parse(data) : data;
       return;
     } catch (e) {
-      if ('SyntaxError' in e) {
+      if (e.toString().includes('SyntaxError')) {
         this.notificationService.sendNotification(
           `Error in the Json syntax of the response try the 'raw' format.`, 'error');
       } else {
