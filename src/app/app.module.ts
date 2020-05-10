@@ -12,7 +12,7 @@ import {IconConnectComponent} from './_core/icons/icon-connect/icon-connect.comp
 import {ReactiveFormsModule} from '@angular/forms';
 import {HeaderComponent} from './header/header.component';
 import {IconSendComponent} from './_core/icons/icon-send/icon-send.component';
-import {IconGithubComponent} from './_core/icons/icon-github/icon-github.component';
+import {IconGitHubComponent} from './_core/icons/icon-github/icon-github.component';
 import {JsonViewComponent} from './_core/json-view/json-view.component';
 import {IconArrowRightComponent} from './_core/icons/icon-arrow-right/icon-arrow-right.component';
 import {IconArrowDownComponent} from './_core/icons/icon-arrow-down/icon-arrow-down.component';
@@ -37,7 +37,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     IconConnectComponent,
     HeaderComponent,
     IconSendComponent,
-    IconGithubComponent,
+    IconGitHubComponent,
     JsonViewComponent,
     IconArrowRightComponent,
     IconArrowDownComponent,
