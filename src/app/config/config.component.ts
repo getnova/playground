@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
-import {WebSocketService} from '../_core/web-socket.service';
+import {WebsocketService} from '../_core/websocket/websocket.service';
 
 @Component({
   selector: 'app-config',
@@ -13,7 +13,7 @@ export class ConfigComponent implements OnInit {
   status = false;
   connecting = false;
 
-  constructor(private websocketService: WebSocketService) {
+  constructor(private websocketService: WebsocketService) {
     this.url = new FormControl('', [Validators.required, Validators.pattern(new RegExp(/ws[s]?:\/\/.+/, 'i'))]);
   }
 

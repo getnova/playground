@@ -1,22 +1,24 @@
-<!--<main>-->
-<!--  <div class="header">-->
-<!--    <app-header></app-header>-->
-<!--  </div>-->
+<main class="main">
+  <app-header></app-header>
 
-<!--  <div class="config">-->
-<!--    <app-config></app-config>-->
-<!--  </div>-->
+  <div *ngIf="!config.playgroundUrl" class="content editor">
+    <div class="config">
+      <app-config></app-config>
+    </div>
 
-<!--  <div class="editor">-->
-<!--    <app-editor></app-editor>-->
-<!--  </div>-->
+    <div class="editor">
+      <app-editor></app-editor>
+    </div>
 
-<!--  <div class="response">-->
-<!--    <app-response></app-response>-->
-<!--  </div>-->
-<!--</main>-->
+    <div class="response">
+      <app-response></app-response>
+    </div>
+  </div>
 
-<app-playground></app-playground>
+  <div *ngIf="config.playgroundUrl" class="editor playground">
+    <app-playground></app-playground>
+  </div>
+</main>
 
 <div class="notification-list">
   <app-notification-list></app-notification-list>

@@ -16,6 +16,7 @@ import {IconJsonComponent} from './icons/icon-json/icon-json.component';
 import {IconRawComponent} from './icons/icon-raw/icon-raw.component';
 import {NotificationListComponent} from './notifications/notification-list/notification-list.component';
 import {NotificationItemComponent} from './notifications/notification-item/notification-item.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import {NotificationItemComponent} from './notifications/notification-item/notif
     NotificationListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ]
 })
 export class CoreModule {

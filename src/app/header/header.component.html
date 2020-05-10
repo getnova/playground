@@ -1,8 +1,13 @@
-<header>
-  <div class="group">
-    <h1>Websocket Client</h1>
+<header [class.large]="config.description" class="header">
+  <div class="group meta-information">
+    <h1 class="title">
+      <span>{{config.title || 'Websocket Client'}}</span>
+      <span *ngIf="config.version" class="version">Api v{{config.version}}</span>
+    </h1>
+    <span *ngIf="config.description" class="description">{{config.description}}</span>
   </div>
-  <div class="group">
+
+  <div class="group links">
     <a href="https://github.com/MarcelCoding/websocket-client" rel="noopener noreferrer" target="_blank">
       <div class="icon">
         <app-icon-github></app-icon-github>

@@ -8,7 +8,7 @@
 
   /* Font */
   font-family: $font-family;
-  font-weight: 500;
+  font-weight: $text-font-weight;
   color: $text-color;
 
   /* Mozilla Firefox */
@@ -61,6 +61,12 @@ code, kbd, samp, pre {
 
 h1, h2, h3, h4, h5, h6 {
   font-size: $title-font-size;
+  font-weight: $title-font-weight;
+
+  a, p, span, input, code, pre {
+    font-size: $title-font-size;
+    font-weight: $title-font-weight;
+  }
 }
 
 .box {

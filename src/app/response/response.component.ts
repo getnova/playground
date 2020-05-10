@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {WebSocketService} from '../_core/web-socket.service';
+import {WebsocketService} from '../_core/websocket/websocket.service';
 import {NotificationService} from '../_core/notifications/notification.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class ResponseComponent {
   format = 'Json';
   private rawData: string;
 
-  constructor(private websocketService: WebSocketService,
+  constructor(private websocketService: WebsocketService,
               private notificationService: NotificationService) {
     this.websocketService.response.subscribe(data => {
       this.rawData = data;

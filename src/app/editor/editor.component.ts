@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {WebSocketService} from '../_core/web-socket.service';
+import {WebsocketService} from '../_core/websocket/websocket.service';
 import {FormControl, Validators} from '@angular/forms';
 import {NotificationService} from '../_core/notifications/notification.service';
 
@@ -15,7 +15,7 @@ export class EditorComponent {
   format = 'Json';
   status = false;
 
-  constructor(private websocketService: WebSocketService,
+  constructor(private websocketService: WebsocketService,
               private notificationService: NotificationService) {
     this.content = new FormControl('', [Validators.required]);
     this.websocketService.status.subscribe(data => this.status = data);

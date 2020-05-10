@@ -4,16 +4,13 @@ import {Subject} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class WebSocketService {
+export class WebsocketService {
 
   public response: Subject<any> = new Subject<any>();
   public status: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   public address: string;
   private socket: WebSocket;
-
-  constructor() {
-  }
 
   public connect(address: string): void {
     if (this.socket !== undefined) {
