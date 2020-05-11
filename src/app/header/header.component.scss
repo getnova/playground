@@ -27,13 +27,13 @@ header.header {
     display: flex;
     flex-direction: row;
 
-    &.meta-information {
+    &.metadata {
       flex-direction: column;
       position: relative;
       width: auto;
 
 
-      h1.title {
+      h1.name {
         display: flex;
         flex-direction: row;
         align-items: center;

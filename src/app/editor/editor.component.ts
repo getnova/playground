@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {WebsocketService} from '../_core/websocket/websocket.service';
+import {WebSocketService} from '../_core/web-socket/web-socket.service';
 import {FormControl, Validators} from '@angular/forms';
 import {NotificationService} from '../_core/notifications/notification.service';
 
@@ -15,7 +15,7 @@ export class EditorComponent {
   format = 'Json';
   status = false;
 
-  constructor(private websocketService: WebsocketService,
+  constructor(private websocketService: WebSocketService,
               private notificationService: NotificationService) {
     this.content = new FormControl('', [Validators.required]);
     this.websocketService.status.subscribe(data => this.status = data);
@@ -29,7 +29,7 @@ export class EditorComponent {
         } catch (e) {
           if (e.toString().includes('SyntaxError')) {
             this.notificationService.sendNotification(
-              `Error in the Json syntax of the response try the 'raw' format.`, 'error');
+              `Error in the Json syntax of the request try the 'raw' format.`, 'error');
           } else {
             console.error(e);
             this.notificationService.sendNotification(

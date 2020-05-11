@@ -59,13 +59,21 @@ code, kbd, samp, pre {
   font-family: $font-family-mono;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-size: $title-font-size;
+h1, h2 {
+  font-size: $text-font-size;
   font-weight: $title-font-weight;
 
   a, p, span, input, code, pre {
-    font-size: $title-font-size;
+    font-size: $text-font-size;
     font-weight: $title-font-weight;
+  }
+}
+
+h1 {
+  font-size: $title-font-size;
+
+  a, p, span, input, code, pre {
+    font-size: $title-font-size;
   }
 }
 

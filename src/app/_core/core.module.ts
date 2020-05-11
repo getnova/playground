@@ -17,6 +17,7 @@ import {IconRawComponent} from './icons/icon-raw/icon-raw.component';
 import {NotificationListComponent} from './notifications/notification-list/notification-list.component';
 import {NotificationItemComponent} from './notifications/notification-item/notification-item.component';
 import {HttpClientModule} from '@angular/common/http';
+import {IconCopyComponent} from './icons/icon-copy/icon-copy.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import {HttpClientModule} from '@angular/common/http';
     IconJsonComponent,
     IconRawComponent,
     NotificationListComponent,
-    NotificationItemComponent
+    NotificationItemComponent,
+    IconCopyComponent
   ],
   exports: [
     FormFieldComponent,
@@ -51,7 +53,9 @@ import {HttpClientModule} from '@angular/common/http';
     IconConnectComponent,
     IconCloseComponent,
     IconSendComponent,
-    NotificationListComponent
+    NotificationListComponent,
+    IconArrowRightComponent,
+    IconCopyComponent
   ],
   imports: [
     CommonModule,

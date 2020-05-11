@@ -1,16 +1,30 @@
 import {EventEmitter, Injectable} from '@angular/core';
 import {Subject} from 'rxjs';
+import {NotificationService} from '../notifications/notification.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class WebsocketService {
+export class WebSocketService {
 
   public response: Subject<any> = new Subject<any>();
   public status: EventEmitter<boolean> = new EventEmitter<boolean>();
-
   public address: string;
+  private currentStatus: boolean;
   private socket: WebSocket;
+
+  constructor(private notificationService: NotificationService) {
+    this.status.subscribe(status => {
+      this.currentStatus = status;
+
+      if (this.status) {
+        this.notificationService.sendNotification(`Websocket is now connected to ${this.address}.`, 'success');
+      } else {
+        this.notificationService.sendNotification(`Websocket lost connection to ${this.address}. Websocket is now reconnection.`, 'error');
+        this.connect(this.address);
+      }
+    });
+  }
 
   public connect(address: string): void {
     if (this.socket !== undefined) {
@@ -29,7 +43,16 @@ export class WebsocketService {
   }
 
   public send(content: string): void {
-    this.socket.send(content);
+    if (!this.status) {
+      this.connect(this.address);
+      this.status.subscribe(connected => {
+        if (connected) {
+          this.socket.send(content);
+        }
+      });
+    } else {
+      this.socket.send(content);
+    }
   }
 
   public close(): void {

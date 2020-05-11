@@ -1,1 +1,4 @@
-{{playground.apiUrl}}
+<app-playground-endpoint-collection
+  *ngFor="let endpointCollection of playground.endpointCollections"
+  [endpointCollection]="endpointCollection">
+</app-playground-endpoint-collection>
