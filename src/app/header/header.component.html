@@ -7,6 +7,13 @@
     <span *ngIf="config.description" class="description">{{config.description}}</span>
   </div>
 
+  <div *ngIf="config.playgroundUrl" class="group">
+    <app-button (click)="config.currentPage=config.currentPage==='editor'?'playground':'editor'"
+                [title]="'Go to '+(config.currentPage==='editor'?'Playground':'Editor')">
+      <app-icon-arrow></app-icon-arrow>
+    </app-button>
+  </div>
+
   <div class="group links">
     <a href="https://github.com/MarcelCoding/websocket-client" rel="noopener noreferrer" target="_blank">
       <div class="icon">

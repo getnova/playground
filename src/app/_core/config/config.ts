@@ -3,4 +3,6 @@ export interface Config {
   version: string;
   description: string;
   playgroundUrl: string;
+
+  currentPage: 'editor' | 'playground';
 }

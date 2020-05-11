@@ -32,8 +32,10 @@ export class PlaygroundService {
     if (this.config.playgroundUrl) {
       this.httpClient.get<Playground>(this.config.playgroundUrl).subscribe(
         playground => {
-          this.playground = playground;
-          this.playgroundUpdate.emit(playground);
+          if (this.playground !== playground) {
+            this.playground = playground;
+            this.playgroundUpdate.emit(playground);
+          }
         },
         error => console.warn(`Can't load playground: ${error.message}`)
       );

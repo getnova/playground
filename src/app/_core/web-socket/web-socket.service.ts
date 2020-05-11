@@ -1,5 +1,5 @@
 import {EventEmitter, Injectable} from '@angular/core';
-import {Subject} from 'rxjs';
+import {Subject, Subscription} from 'rxjs';
 import {NotificationService} from '../notifications/notification.service';
 
 @Injectable({
@@ -14,6 +14,7 @@ export class WebSocketService {
   private socket: WebSocket;
 
   constructor(private notificationService: NotificationService) {
+    this.currentStatus = false;
     this.status.subscribe(status => {
       this.currentStatus = status;
 
@@ -21,7 +22,6 @@ export class WebSocketService {
         this.notificationService.sendNotification(`Websocket is now connected to ${this.address}.`, 'success');
       } else {
         this.notificationService.sendNotification(`Websocket lost connection to ${this.address}. Websocket is now reconnection.`, 'error');
-        this.connect(this.address);
       }
     });
   }
@@ -43,7 +43,7 @@ export class WebSocketService {
   }
 
   public send(content: string): void {
-    if (!this.status) {
+    if (!this.currentStatus) {
       this.connect(this.address);
       this.status.subscribe(connected => {
         if (connected) {
@@ -51,13 +51,26 @@ export class WebSocketService {
         }
       });
     } else {
-      this.socket.send(content);
+      if (new URL(this.address).href !== new URL(this.socket.url).href) {
+        this.connect(this.address);
+        const subscription: Subscription = this.status.subscribe((currentStatus: boolean) => {
+          if (currentStatus) {
+            this.socket.send(content);
+            subscription.unsubscribe();
+          }
+        });
+      } else {
+        this.socket.send(content);
+      }
     }
   }
 
   public close(): void {
-    this.socket.close();
-    this.socket = undefined;
-    this.status.emit(false);
+    if (this.socket) {
+      this.socket.close();
+      delete this.socket;
+      this.socket = undefined;
+      this.status.emit(false);
+    }
   }
 }

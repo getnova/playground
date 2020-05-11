@@ -1,7 +1,7 @@
 <main class="main">
   <app-header></app-header>
 
-  <div *ngIf="!config.playgroundUrl" class="content editor">
+  <div *ngIf="config.currentPage==='editor'" class="content editor">
     <div class="config">
       <app-config></app-config>
     </div>
@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <div *ngIf="config.playgroundUrl" class="editor playground">
+  <div *ngIf="config.currentPage==='playground' && config.playgroundUrl" class="editor playground">
     <app-playground></app-playground>
   </div>
 </main>

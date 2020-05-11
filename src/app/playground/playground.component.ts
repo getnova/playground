@@ -17,16 +17,12 @@ export class PlaygroundComponent {
     private webSocketService: WebSocketService) {
 
     this.playground = this.playgroundService.playground;
-    this.connect();
+    this.webSocketService.address = this.playground.apiUrl;
+
     this.playgroundService.playgroundUpdate.subscribe(playground => {
       this.playground = playground;
-      this.connect();
+      this.webSocketService.address = this.playground.apiUrl;
+      this.webSocketService.close();
     });
-  }
-
-  private connect(): void {
-    if (this.playground.apiUrl) {
-      this.webSocketService.connect(this.playground.apiUrl);
-    }
   }
 }
