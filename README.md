@@ -6,3 +6,4 @@ Go to [websocket-client.js.org](https://websocket-client.js.org/) and enter a we
 After this is complete, you can enter some Json code and send it to the server, and in the field below you will see the server's response.
 
 **Please note that you probably have [Cross-Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) problems.**
+But you can clone the `gh-pages' branch and host it yourself or serve it with a local http server (e.g. [http-server](https://www.npmjs.com/package/http-server))
