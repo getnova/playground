@@ -20,7 +20,6 @@ import {HttpClientModule} from '@angular/common/http';
 import {IconCopyComponent} from './icons/icon-copy/icon-copy.component';
 import {IconArrowComponent} from './icons/icon-arrow/icon-arrow.component';
 
-
 @NgModule({
   declarations: [
     FormFieldComponent,
