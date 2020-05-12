@@ -5,7 +5,7 @@ import {FormFieldRefDirective} from './form-field/form-field-ref.directive';
 import {ButtonComponent} from './button/button.component';
 import {IconConnectComponent} from './icons/icon-connect/icon-connect.component';
 import {IconSendComponent} from './icons/icon-send/icon-send.component';
-import {IconGithubComponent} from './icons/icon-github/icon-github.component';
+import {IconGitHubComponent} from './icons/icon-github/icon-github.component';
 import {JsonViewComponent} from './json-view/json-view.component';
 import {IconArrowRightComponent} from './icons/icon-arrow-right/icon-arrow-right.component';
 import {IconArrowDownComponent} from './icons/icon-arrow-down/icon-arrow-down.component';
@@ -28,7 +28,7 @@ import {IconArrowComponent} from './icons/icon-arrow/icon-arrow.component';
     ButtonComponent,
     IconConnectComponent,
     IconSendComponent,
-    IconGithubComponent,
+    IconGitHubComponent,
     JsonViewComponent,
     IconArrowRightComponent,
     IconArrowDownComponent,
@@ -44,7 +44,7 @@ import {IconArrowComponent} from './icons/icon-arrow/icon-arrow.component';
   ],
   exports: [
     FormFieldComponent,
-    IconGithubComponent,
+    IconGitHubComponent,
     IconRawComponent,
     DropdownComponent,
     IconJsonComponent,
