@@ -58,4 +58,5 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## Authors
 
-* **Marcel Koch** - *Initial work*
+* [**MarcelCoding**](https://github.com/MarcelCoding/) - *Initial work*
+* [**JannikEmmerich**](https://github.com/JannikEmmerich/) - *Some typos and design stuff*
