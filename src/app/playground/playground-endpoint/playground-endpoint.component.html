@@ -37,6 +37,7 @@
     <div class="response">
       <div class="metadata">
         <h2>Response<span *ngIf="response?.info"> {{response.info.code}} {{response.info.name}}<span
+          *ngIf="response.info.message"> - {{response.info.message}}</span><span
           *ngIf="response.info.error"
           class="error"> - Error</span></span>
         </h2>
