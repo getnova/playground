@@ -1,0 +1,14 @@
+<div [class.expanded]="children && expanded" class="playground-item">
+  <div (click)="children ? expanded = !expanded : performedSelect.emit()" class="metadata">
+    <div class="icon">
+      <app-icon-arrow-right *ngIf="children"></app-icon-arrow-right>
+      <app-icon-item *ngIf="!children"></app-icon-item>
+    </div>
+    <div class="name">
+      {{name}}
+    </div>
+  </div>
+  <div *ngIf="children && expanded" @collapse class="children">
+    <ng-content></ng-content>
+  </div>
+</div>

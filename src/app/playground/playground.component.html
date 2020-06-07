@@ -1,4 +1,18 @@
-<app-playground-endpoint-collection
-  *ngFor="let endpointCollection of playground.endpointCollections"
-  [endpointCollection]="endpointCollection">
-</app-playground-endpoint-collection>
+<div class="playground">
+  <div class="box selection">
+    <h1 class="title">Endpoints</h1>
+    <app-playground-selection (selectEndpoint)="current = $event;"></app-playground-selection>
+  </div>
+
+  <div class="box editor">
+    <h1 class="title">Editor</h1>
+    <app-playground-editor *ngIf="current" [endpointCollection]="current.collection"
+                           [endpoint]="current.endpoint"></app-playground-editor>
+    <div *ngIf="!current" class="error">
+      <div class="icon">
+        <app-icon-playground></app-icon-playground>
+      </div>
+      <p>No end point selected. Please select an endpoint in the left half.</p>
+    </div>
+  </div>
+</div>

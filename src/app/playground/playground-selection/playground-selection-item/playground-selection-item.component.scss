@@ -1,0 +1,36 @@
+@import "src/scss/constants";
+
+div.playground-item {
+  display: flex;
+  flex-direction: column;
+
+  div.metadata {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    padding: $cube * 0.2;
+
+    div.icon {
+      width: $cube * 1.6;
+      height: $cube * 1.6;
+      transition: transform $transition $transition-type;
+    }
+
+    div.name {
+      margin-left: $cube * 0.5;
+      font-size: $text-font-size;
+      user-select: none;
+    }
+  }
+
+  div.children {
+    display: flex;
+    flex-direction: column;
+    margin-left: $cube * 2;
+  }
+
+  &.expanded div.metadata div.icon {
+    transform: rotate(90deg);
+  }
+}

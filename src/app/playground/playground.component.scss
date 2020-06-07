@@ -1,0 +1,47 @@
+@import "src/scss/constants";
+
+div.playground {
+  display: flex;
+  flex-direction: row;
+
+  div.box {
+    display: flex;
+    flex-direction: column;
+
+    margin: $cube * 2;
+    padding: $cube * 2;
+
+    background-color: $light;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+
+    h1.title {
+      margin: 0 0 $cube * 0.5;
+      padding-bottom: $cube * 0.2;
+      user-select: none;
+
+      border-bottom: $cube * 0.2 solid $text-color;
+    }
+
+    &.selection {
+      width: 30%;
+    }
+
+    &.editor {
+      flex-grow: 1;
+
+      div.error {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        div.icon {
+          width: $cube * 10;
+          height: $cube * 10;
+          margin: $cube * 2 0;
+        }
+      }
+    }
+  }
+}

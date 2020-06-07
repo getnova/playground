@@ -1,0 +1,27 @@
+@import "src/scss/constants";
+
+div.editor {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  div.metadata {
+    display: flex;
+    flex-direction: column;
+
+    div.general {
+      display: flex;
+      flex-direction: column;
+
+      span {
+
+      }
+    }
+
+    div.parameters {
+    }
+  }
+
+  div.response {
+
+  }
+}

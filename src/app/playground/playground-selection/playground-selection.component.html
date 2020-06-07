@@ -1,0 +1,7 @@
+<app-playground-selection-item *ngFor="let endpointCollection of playground.endpointCollections"
+                               [children]="true" [name]="endpointCollection.name">
+  <app-playground-selection-item
+    (performedSelect)="selectEndpoint.emit({collection: endpointCollection.name, endpoint: endpoint})"
+    *ngFor="let endpoint of endpointCollection.endpoints" [children]="false"
+    [name]="endpoint.name"></app-playground-selection-item>
+</app-playground-selection-item>

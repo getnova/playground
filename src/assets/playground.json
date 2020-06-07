@@ -1,0 +1,147 @@
+{
+  "apiUrl": "ws://127.0.0.1/",
+  "endpointCollections": [
+    {
+      "name": "user",
+      "description": "todo",
+      "endpoints": [
+        {
+          "name": "change_password",
+          "description": "",
+          "parameters": [
+            {
+              "name": "password",
+              "description": "",
+              "optional": false,
+              "type": "string"
+            },
+            {
+              "name": "new",
+              "description": "",
+              "optional": false,
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "login",
+          "description": "",
+          "parameters": [
+            {
+              "name": "username",
+              "description": "",
+              "optional": false,
+              "type": "string"
+            },
+            {
+              "name": "password",
+              "description": "",
+              "optional": false,
+              "type": "string"
+            },
+            {
+              "name": "device_name",
+              "description": "",
+              "optional": false,
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "session",
+          "description": "",
+          "parameters": [
+            {
+              "name": "session",
+              "description": "",
+              "optional": false,
+              "type": "string"
+            },
+            {
+              "name": "token",
+              "description": "",
+              "optional": false,
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "logout",
+          "description": "",
+          "parameters": [
+            {
+              "name": "session",
+              "description": "",
+              "optional": true,
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "delete",
+          "description": "",
+          "parameters": [
+            {
+              "name": "password",
+              "description": "",
+              "optional": false,
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "register",
+          "description": "",
+          "parameters": [
+            {
+              "name": "username",
+              "description": "",
+              "optional": false,
+              "type": "string"
+            },
+            {
+              "name": "password",
+              "description": "",
+              "optional": false,
+              "type": "string"
+            },
+            {
+              "name": "device_name",
+              "description": "",
+              "optional": false,
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "get",
+          "description": "",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "",
+              "optional": false,
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "info",
+      "description": "todo",
+      "endpoints": [
+        {
+          "name": "online",
+          "description": "Das ist eine Description",
+          "parameters": []
+        },
+        {
+          "name": "info",
+          "description": "",
+          "parameters": []
+        }
+      ]
+    }
+  ]
+}

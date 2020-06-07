@@ -19,6 +19,8 @@ import {NotificationItemComponent} from './notifications/notification-item/notif
 import {HttpClientModule} from '@angular/common/http';
 import {IconCopyComponent} from './icons/icon-copy/icon-copy.component';
 import {IconArrowComponent} from './icons/icon-arrow/icon-arrow.component';
+import {IconItemComponent} from './icons/icon-item/icon-item.component';
+import {IconPlaygroundComponent} from './icons/icon-playground/icon-playground.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import {IconArrowComponent} from './icons/icon-arrow/icon-arrow.component';
     NotificationListComponent,
     NotificationItemComponent,
     IconCopyComponent,
-    IconArrowComponent
+    IconArrowComponent,
+    IconItemComponent,
+    IconPlaygroundComponent
   ],
   exports: [
     FormFieldComponent,
@@ -57,7 +61,9 @@ import {IconArrowComponent} from './icons/icon-arrow/icon-arrow.component';
     NotificationListComponent,
     IconArrowRightComponent,
     IconCopyComponent,
-    IconArrowComponent
+    IconArrowComponent,
+    IconItemComponent,
+    IconPlaygroundComponent
   ],
   imports: [
     CommonModule,

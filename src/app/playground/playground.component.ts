@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {PlaygroundService} from './playground.service';
 import {Playground} from './interfaces/playground';
 import {WebSocketService} from '../_core/web-socket/web-socket.service';
+import {Endpoint} from './interfaces/endpoint';
 
 @Component({
   selector: 'app-playground',
@@ -11,6 +12,7 @@ import {WebSocketService} from '../_core/web-socket/web-socket.service';
 export class PlaygroundComponent {
 
   playground: Playground;
+  current: { collection: string, endpoint: Endpoint };
 
   constructor(
     private playgroundService: PlaygroundService,
