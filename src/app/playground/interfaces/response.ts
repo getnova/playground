@@ -1,10 +1,12 @@
 export interface Response {
-  tag: string;
   info: {
-    code: number,
-    name: string,
-    message: string,
-    error: boolean
+    tag: string,
+    status: {
+      code: number,
+      name: string,
+      error: boolean
+    },
+    message: string
   };
   data: any;
 }

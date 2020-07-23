@@ -30,7 +30,7 @@ export class PlaygroundEndpointComponent implements OnInit {
     private notificationService: NotificationService) {
     this.webSocketService.response.subscribe(data => {
       const json: Response = JSON.parse(data);
-      if (json.tag === this.endpointName) {
+      if (json.info.tag === this.endpointName) {
         this.response = json;
       }
     });
