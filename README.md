@@ -57,7 +57,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 * [Karma](https://karma-runner.github.io/) - The test tool
 
 ## 3rd party licenses
-[Here](https://marcelcoding.github.com/3rdpartylicenses.txt) you find a list with all licenses of 3rd party packages.
+[Here](https://marcelcoding.github.io/websocket-client/3rdpartylicenses.txt) you find a list with all licenses of 3rd party packages.
 
 ## Authors
 
